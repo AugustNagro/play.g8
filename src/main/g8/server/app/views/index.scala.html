@@ -1,0 +1,19 @@
+@(isProd: Boolean)
+
+@style = {
+    @if(isProd){
+        <style></style>
+    }else{
+        <style></style>
+    }
+}
+
+@content = {
+    @scalajs.html.scripts(
+        projectName = "client",
+        assets = routes.Assets.versioned(_).toString,
+        resourceExists = name => getClass.getResource(s"/public/$name") != null
+    )
+}
+
+@main(style, content)
