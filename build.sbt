@@ -1,6 +1,6 @@
 lazy val playTemplate = (project in file("."))
   .settings(
-    version := "0.1.1-SNAPSHOT",
+    version := "0.2.0",
     test in Test := {
       val _ = (g8Test in Test).toTask("").value
     },
